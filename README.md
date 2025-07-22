@@ -18,35 +18,34 @@ The directory is structured like so:
 
 General-documentation/
 │
-├── ITERATION_1/
-│   ├── Electrical/
-│   │   ├── Overview.md
-│   │   └── Deep/
-│   │       └── <detailed_docs>.md
-│   │
-│   ├── Mechanical/
-│   │   ├── Overview.md
-│   │   └── Deep/
-│   │       └── <detailed_docs>.md
-│   │
-│   ├── Software/
-│   │   ├── Overview.md
-│   │   └── Deep/
-│   │       └── <detailed_docs>.md
-│   ├── Admin/
-│   |   └── <internal_docs>.md
-|   |
-│   └── UserManual.pdf
-│    
-│
-├── ITERATION_2/
-│   └── (same structure)
+├── ITERATION_1/  
+│   ├── Electrical/  
+│   │   ├── Overview.md  
+│   │   └── Deep/  
+│   │       └── <detailed_docs>.md  
+│   │  
+│   ├── Mechanical/  
+│   │   ├── Overview.md  
+│   │   └── Deep/  
+│   │       └── <detailed_docs>.md  
+│   │  
+│   ├── Software/  
+│   │   ├── Overview.md  
+│   │   └── Deep/  
+│   │       └── <detailed_docs>.md  
+│   ├── Admin/  
+│   |   └── <internal_docs>.md  
+|   |  
+│   └── UserManual.pdf  
+│      
+│  
+├── ITERATION_2/  
+│   └── (same structure)  
 |
 ├── ITERATION_N/
 │   └── (same structure)
-│
-└── README.md
-
+│  
+└── README.md  
 
 Each system folder at the top level will include an overview.md file that may have diagrams and 
 top level overviews of the system. This is to give the team and new members a better understanding of each system 
