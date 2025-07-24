@@ -17,7 +17,7 @@ Microcontroller: Arduino Mega 2560.
 3. Hook up the pins/ peripherals in the right place based on your code.
 4. Bosh. Hope and pray it works.
 
-![ArduinoMega](ArduinoMEGA.png)
+![ArduinoMega](Pics/ArduinoMEGA.png)
 
 ## Understanding the Arduino
 
@@ -25,7 +25,7 @@ Microcontroller: Arduino Mega 2560.
 
 The Arduino library is based on the programming language C, a low level language, allowing for greater memory control and runs fast - perfect for embedded development where memory is limited. Arduino code is easy to write in and easy to set up for your chosen Arduino board. It handles alot of the set-up that would need to be done with a custom or less beginner friendly microcontroller.
 
-![ArduinoIDE](ArduinoIDE.png)
+![ArduinoIDE](Pics/ArduinoIDE.png)
 
 ### Arduino Architecture
 
@@ -37,7 +37,7 @@ Another disadvantage of the Arduino is that there are no built in sensors - it i
 
 As well as this, the Arduino has a bit resolution of 10 bits, meaning that data read from analogue inputs (continuous waves) are digitized, this causes a loss of precision in the analogue data, as it can only be represented using 10 bits. 
 
-![ADC Wave Comparison](ADC.png)
+![ADC Wave Comparison](Pics/ADC.png)
 
 To combat this for voltage/ current measurements, an external sensor with a higher bit resolution is used, this then sends the actual numbers to the arduino through a digital port. This avoids the ADC (Analogue-to-Digital-Conversion) through the Arduino.
 
