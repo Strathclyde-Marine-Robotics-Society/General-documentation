@@ -1,5 +1,7 @@
 # Arduino Syntax Explained (Briefly)
 
+Author(s): Owen L.
+
 While this file will use Arduino code for its examples, the principles here will apply to all programming languages.
 
 ## Table of Contents
