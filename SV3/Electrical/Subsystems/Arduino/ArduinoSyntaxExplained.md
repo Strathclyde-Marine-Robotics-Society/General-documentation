@@ -249,17 +249,44 @@ To learn more about conditionals and switch statements, [click here](https://www
 
 Let's write a function to control the LED.
 
-![alt text](Pics/code6.png)
+```Arduino
+enum LightState {BLINKING, ON, OFF};
+
+// Runs over and over again
+void loop() {
+  enum LightState LEDState = ON; 
+  controlLED(LEDState);
+}
+
+// Dictates the behaviour of the LED depending on the state.
+void controlLED(enum LightState LED) {
+    switch (LED) {
+    case BLINKING:   
+        digitalWrite(LED_BUILTIN, LOW);
+        delay(1000);
+        // fallthrough intended
+    case ON:     
+        digitalWrite(LED_BUILTIN, HIGH);
+        delay(1000);
+        break;
+    default:    
+        digitalWrite(LED_BUILTIN, LOW);
+        delay(1000);
+    }
+}
+```
 
 `void` is the return type of the function, our function does not return any value, so we use `void`, otherwise you may use a data type like `int` or `char`.
 
-We then name the function, and then inside the braces `()`, we define the function *parameters*, in this case `int blinkState`. We can add more parameters like so `(int blinkState, float blahBlahBlah[], ...)`. The function code is then written inside the curly braces `{}`.
+We then name the function `controlLED`, and then inside the braces `()`, we define the function *parameters*, in this case `enum LightState LED`. The function code is then written inside the curly braces `{}`.
 
-Inside `loop()`, we call our function `controlLED()` and pass in `blinkLED` as an arguement to the function, this gives `blinkState` the value of `blinkLED`.
+Inside `loop()`, we call our function `controlLED()` and pass in `LEDState` as an *arguement to the function*, this gives the function parameter `LED` the value of `LEDState`. Notice how the function parameter `LED` and the function arguement `LEDState` can have different names. The key idea is that the parameter takes the *value* of the arguement that was passed in. 
+
+Notice how in the switch statement, in the code block that is executed when `LED == BLINKING`, there is no `break` statement. This means that the code in the next case block will execute until it hits a `break` is found, so we effectively get the blinking behaviour with less code. The performance difference is negligible, but I still wanted to show that this was possible. Code readability and maintainabilty always comes first. 
 
 The main benefits of writing a function like this, is that it tidies the `loop()` function up significantly. Functions can also be called as many times as you want, making code *reusable*.
 
-To learn more about functions and variable scope, [go here](https://www.w3schools.com/c/c_functions.php).
+To learn more about functions and variable scope, [click here](https://www.w3schools.com/c/c_functions.php).
 
 
 
