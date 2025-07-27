@@ -249,7 +249,7 @@ To learn more about conditionals and switch statements, [click here](https://www
 
 Let's write a function to control the LED.
 
-```Arduino
+```C
 enum LightState {BLINKING, ON, OFF};
 
 // Runs over and over again
