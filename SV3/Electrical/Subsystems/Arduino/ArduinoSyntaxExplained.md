@@ -112,6 +112,13 @@ When you declare a variable. You start with the data type, then the name, then w
 8   count = 0;      
 9   // Good for certain cases
 ```
+
+You can declare multiple variables of the same type in oe line too.
+
+```C
+float x = 1, y = 2, z = 3;
+```
+
 ### Macros
 
 Macros are useful for improving readability in C. *They are not variables* as they do not change thoughout runtime, they are only relevant to the [preprocessor stage of compilation]
@@ -170,6 +177,58 @@ Let's focus on the first two examples. The first example is similiar to how an a
 In the first example, we simply use double quotes `""`, this symbolises a *string literal*, which automatically places the null terminator `\0` at the end for us. 
 
 That is all we will cover for character arrays/ strings for now in C. In order to go into why the 3rd example fails, we must introduce pointers, which will be introduced later.
+
+### Structs
+
+Structs are great for keeping related data closer together. 
+
+```C
+1   struct Vec3 {
+2     int x, y, z;
+3   };
+4   struct Vec3 startPos = {1, 3, 2};
+5   struct Vec3 endPos = {19, 30, 1};
+6   struct Vec3 direction = { endPos.x-startPos.x, endPos.y-startPos.y, endPos.z-startPos.z };
+```
+We define a struct starting with the `struct` keyword, then the name of the struct. The data held by the struct is defined within the curly braces `{}`, these are the struct *members*. Think of this as the *structure* for a data type called Vec3 that we have made ourselves. 
+
+We can then use this structure in our variables, and just like arrays, we use curly braces `{}` to intialise each struct member (in the order they are defined). We can use this structure as much as we like. 
+
+A better way to define a struct is to use the keyword `typedef` which means type definition. 
+
+```C
+1   typedef struct {
+2     int x, y, z;
+3   } Vec3;
+4   Vec3 startPos = {1, 3, 2};
+5   Vec3 endPos = {19, 30, 1};
+6   Vec3 direction = { endPos.x-startPos.x, endPos.y-startPos.y, endPos.z-startPos.z };
+```
+This makes Vec3 look like just another data type, and saves us from having to write struct. To learn more about struct, [click here](https://www.w3schools.com/c/c_structs.php). To learn more about typedef, [click here](https://www.geeksforgeeks.org/c/typedef-in-c/).
+
+### Enums
+
+Enums stands for enumerations, it is essentially a list where each element has a value, enums are used to make code more readable and control state.
+
+```C
+1   enum State { DISCONNECTED, RC_CONTROLLED, AUTONOMOUS  };
+2   enum State state = AUTONOMOUS;
+```
+Similiar to a struct, we first define the enumerated list, each element actually represents an integer number - this defaults to 0, 1, 2, etc. The elements of an `enum` are just constants. Let's change what each element represents in this example:
+
+```C
+1   enum Speed { SLOW = 50, FAST = 100, SUPERFAST = 200};
+2   enum Speed currentSpeed = 0;
+```
+`currentSpeed = 0` is equivalent to `currentSpeed = SLOW`, so `currentSpeed` will hold the value 50. 
+
+Note: You can assign an `int` to one of the enum constants like so: 
+```
+int currentSpeed = FAST;
+```
+This will give currentSpeed the value of 50. The only downside to using an int over an enum type is that you cannot assign an index of the `enum` to the `int` type. E.g. you cannot write `int currentSpeed = 1` and expect to get the value of `FAST` assigned to it. 
+
+Learn more about enums [here](https://www.w3schools.com/c/c_enums.php) and type safety [here](https://stackoverflow.com/questions/260626/what-is-type-safe).
 
 ## Control Flow and Functions
 
