@@ -102,7 +102,7 @@ You can also use `signed`, `unsigned`, `long`, `long long` and `short` keywords 
 
 ### Declaring Variables 
 
-When you declare a variable. You start with the data type, then the name, then what it is equal to. It is recommended to *initalise* it right away, however you can *assign* it later.
+When you declare a variable. You start with the data type, then the name, then what value it holds. It is recommended to *initalise* it right away, however you can *assign* it later.
 
 ```C
 1   int count = 0;    // Preferred
@@ -114,7 +114,7 @@ When you declare a variable. You start with the data type, then the name, then w
 9   // Good for certain cases
 ```
 
-You can declare multiple variables of the same type in oe line too.
+You can declare multiple variables of the same type in one line too.
 
 ```C
 float x = 1, y = 2, z = 3;
@@ -122,7 +122,7 @@ float x = 1, y = 2, z = 3;
 
 ### Macros
 
-Macros are useful for improving readability in C. *They are not variables* as they do not change thoughout runtime, they are only relevant to the [preprocessor stage of compilation]
+Macros are useful for improving readability in C. *They are not variables* as they do not change thoughout runtime, they are only relevant to the [preprocessor stage of compilation](https://youtu.be/XJC5WB2Bwrc?si=vk8MN1WgPjXkVF6A&t=240). The preprocessor effectively changes all of your code before it compiles, it also handles `#include`s, where another files code is  copied into the file the include macro was written in. It is recommended to be familiar with the stages of a compiler to know how to communicate with it - the most common C compiler is GNU. Arduino uses AVR-GCC compiler which is apart of the GNU collection
 
 ```C
 #define BUZZER_PIN D10
@@ -132,7 +132,7 @@ Before compliing the code, the preprocessor will replace every instance of `BUZZ
 #define DEBUG true
 #define DEBUG_SERIAL if(DEBUG) Serial2
 ```
-Here we make a macro for `DEBUG`, so every instance of this is replaced with `true`. Then another macro for `DEBUG_SERIAL`, so every instance of this is replaced with the code `if(DEBUG) Serial`. 
+Here we make a macro for `DEBUG`, so every instance of this is replaced with `true`. Then another macro for `DEBUG_SERIAL`, so every instance of this is replaced with the code `if(DEBUG) Serial`. This replacing behaviour is done by the pre-processor.  
 
 ```C
 DEBUG_SERIAL.print("Hello world!")
@@ -191,7 +191,7 @@ Structs are great for keeping related data closer together.
 5   struct Vec3 endPos = {19, 30, 1};
 6   struct Vec3 direction = { endPos.x-startPos.x, endPos.y-startPos.y, endPos.z-startPos.z };
 ```
-We define a struct starting with the `struct` keyword, then the name of the struct. The data held by the struct is defined within the curly braces `{}`, these are the struct *members*. Think of this as the *structure* for a data type called Vec3 that we have made ourselves. 
+We define a struct starting with the `struct` keyword, then the name of the struct. The data held by the struct is defined within the curly braces `{}`, these are the struct *members*. Think of this as the *structure* for a data type called `Vec3`. 
 
 We can then use this structure in our variables, and just like arrays, we use curly braces `{}` to intialise each struct member (in the order they are defined). We can use this structure as much as we like. 
 
@@ -205,7 +205,7 @@ A better way to define a struct is to use the keyword `typedef` which means type
 5   Vec3 endPos = {19, 30, 1};
 6   Vec3 direction = { endPos.x-startPos.x, endPos.y-startPos.y, endPos.z-startPos.z };
 ```
-This makes Vec3 look like just another data type, and saves us from having to write struct. To learn more about struct, [click here](https://www.w3schools.com/c/c_structs.php). To learn more about typedef, [click here](https://www.geeksforgeeks.org/c/typedef-in-c/).
+This makes 'Vec3' look like just another data type, and saves us from having to write struct. To learn more about struct, [click here](https://www.w3schools.com/c/c_structs.php). To learn more about typedef, [click here](https://www.geeksforgeeks.org/c/typedef-in-c/).
 
 ### Enums
 
