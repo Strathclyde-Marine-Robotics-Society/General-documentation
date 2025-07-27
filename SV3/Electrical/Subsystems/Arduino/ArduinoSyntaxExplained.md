@@ -3,21 +3,22 @@
 While this file will use Arduino code for its examples, the principles here will apply to all programming languages.
 
 ## Table of Contents
-
-- [Arduino Syntax Explained (Briefly)](#arduino-syntax-explained-(briefly))
-  - [Intro - First Look](#intro---first-look)
-    - [Blink Program - Pins and Delays](#blink-program---pins-and-delays)
+- [Arduino Syntax Explained (Briefly)](#arduino-syntax-explained-briefly)
+   * [Table of Contents](#table-of-contents)
+   * [Intro - First Look](#intro-first-look)
+      + [Blink Program - Pins and Delays](#blink-program-pins-and-delays)
 - [C Syntax Summary](#c-syntax-summary)
-  - [Variables](#variables)
-    - [Variable Types](#variable-types)
-    - [Declaring Variables](#declaring-variables)
-    - [Macros](#macros)
-    - [Arrays](#arrays)
-  - [Control Flow and Functions](#control-flow-and-functions)
-    - [Conditional Statements](#conditional-statements)
-    - [Functions](#functions)
-
-
+   * [Variables](#variables)
+      + [Variable Types](#variable-types)
+      + [Declaring Variables ](#declaring-variables)
+      + [Macros](#macros)
+      + [Arrays](#arrays)
+      + [Structs](#structs)
+      + [Enums](#enums)
+   * [Control Flow and Functions](#control-flow-and-functions)
+      + [Conditional Statements](#conditional-statements)
+      + [Functions](#functions)
+    
 ## Intro - First Look
 
 An arduino file is called a sketch, and starts out looking like this:
@@ -220,15 +221,13 @@ Similiar to a struct, we first define the enumerated list, each element actually
 1   enum Speed { SLOW = 50, FAST = 100, SUPERFAST = 200};
 2   enum Speed currentSpeed = 0;
 ```
-`currentSpeed = 0` is equivalent to `currentSpeed = SLOW`, so `currentSpeed` will hold the value 50. 
+`enum Speed currentSpeed = 0` is equivalent to `enum Speed currentSpeed = SLOW`, so `currentSpeed` will hold the value 50. 
 
-Note: You can assign an `int` to one of the enum constants like so: 
-```
-int currentSpeed = FAST;
-```
-This will give currentSpeed the value of 50. The only downside to using an int over an enum type is that you cannot assign an index of the `enum` to the `int` type. E.g. you cannot write `int currentSpeed = 1` and expect to get the value of `FAST` assigned to it. 
+Note: You can assign an `int` to one of the enum constants like so: `int currentSpeed = FAST;`
 
-Learn more about enums [here](https://www.w3schools.com/c/c_enums.php) and type safety [here](https://stackoverflow.com/questions/260626/what-is-type-safe).
+This will give `currentSpeed` the value of 50. The only downside to using an `int` over an `enum` type is that you cannot assign an index of the `enum` to the `int` type. E.g. you cannot write `int currentSpeed = 1` and expect to get the value of `FAST` assigned to it. 
+
+Learn more about [enums here](https://www.w3schools.com/c/c_enums.php) and [type safety here](https://stackoverflow.com/questions/260626/what-is-type-safe).
 
 ## Control Flow and Functions
 
