@@ -58,7 +58,7 @@ Then we add some code inside the `loop()` function.
 ![alt text](Pics/code4.png)
 
 Semi-colons `;` are used to tell the complier that *"this is the end of this line of code"*. Each line of code is executed one at a time, from top to bottom. If we wanted we could write on line 9:
-```
+```C
 9   digitalWrite(LED_BUILTIN, HIGH); delay(1000);
 ```
 Then remove the code on line 10. This would not change anything, since the semi-colon shows the end of that line of code. It is strongly recommended to avoid this for readability sake.
