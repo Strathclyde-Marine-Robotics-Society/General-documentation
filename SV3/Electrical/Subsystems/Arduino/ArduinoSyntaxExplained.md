@@ -67,11 +67,9 @@ Then remove the code on line 10. This would not change anything, since the semi-
 
 `digitalWrite()` allows us to write a high or low signal to a pin. We start by writing a high signal (5V, powering the LED) then after 1s, we write a low signal (0V, turning the LED off), then we wait another second. Once line 12 has exectuted, `loop()` is automatically called again and the process repeats.
 
-This is embedded systems coding in a nutshell, you initalise a pin, send some signals to it, bosh!
-
 # C Syntax Summary
 
-Now that the IDE has been introduces and we are familiar with `setup()` and `loop()`, lets go over some baisc syntax. Every programming language has the same ideas we are about to go over, but they may be written differently.
+Now that the IDE has been introduced and we are familiar with `setup()` and `loop()`, lets go over some basic syntax. Every programming language has the same ideas we are about to go over, but they may be written differently.
 
 ## Variables
 
